@@ -48,7 +48,7 @@ export const projects: Project[] = [
     year: "2026",
     kind: "Regulated B2B catalog",
     summary:
-      "Export catalog for a Seoul manufacturer of dental bone grafts and barrier membranes, selling factory-direct to clinics in Europe and Russian-speaking Eurasia.",
+      "Export catalog for a Seoul manufacturer of dental bone grafts and barrier membranes, localised into five languages and selling factory-direct to clinics across Europe, Eurasia, and the Gulf.",
     role: "Sole developer — strategy, design, and build",
     stack: ["Next.js", "TypeScript", "Locale routing", "Inter + Fraunces", "GA4"],
     problem:
@@ -58,11 +58,12 @@ export const projects: Project[] = [
       "Buyers are international; procurement happens by quote, not checkout",
       "Catalog is small (7 SKUs), so depth per product matters more than breadth",
       "Korean manufacturing origin is the selling point, but Korea is not the market",
+      "Five target markets, each needing full translation rather than a partial one",
     ],
     decisions: [
       {
-        title: "English and Russian — deliberately no Korean",
-        body: "The buyer isn't in Korea. Medistan manufactures in Seoul and sells outward: European clinics and the Russian-speaking Eurasian market, where Korean dental materials compete well on price against German and Swiss brands. Korean-language pages would serve nobody in that funnel. The .co.kr domain still does its job — it signals manufacturing origin, which is the product's main credential — while the content targets the markets that actually buy. I speak Russian, which is why the ru localisation reads as written rather than translated.",
+        title: "Five languages, and deliberately none of them Korean",
+        body: "The buyer isn't in Korea. Medistan manufactures in Seoul and sells outward, so the locale set is a market map rather than a translation checklist: German and French for the European clinical market, Russian for Eurasia, Arabic for the Gulf, English as the default. Korean-language pages would serve nobody in that funnel. The .co.kr domain still does its job — it signals manufacturing origin, which is the product's main credential — while the content targets the markets that actually buy. All five dictionaries carry full parity at 146 keys; a partial localisation in a regulated category reads as carelessness, which is the opposite of what the site is trying to establish. I speak Russian, which is why that localisation reads as written rather than commissioned.",
       },
       {
         title: "Spec-level copy over marketing copy",
@@ -80,8 +81,8 @@ export const projects: Project[] = [
     evidence: [
       { label: "HTML transferred", value: "17 KB gzipped" },
       { label: "Time to first byte", value: "0.49 s" },
-      { label: "Locales live", value: "en, ru" },
-      { label: "Structured data", value: "Organization JSON-LD" },
+      { label: "Locales live", value: "en · de · fr · ru · ar" },
+      { label: "Translation parity", value: "146 keys × 5" },
     ],
     retro: [
       "Add Product/Offer JSON-LD. The catalog already carries specs and material classes in the markup; marking them up is what surfaces them in search results.",
