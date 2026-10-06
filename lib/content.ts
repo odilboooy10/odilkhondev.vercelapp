@@ -192,5 +192,5 @@ export const stack = {
   "Core": ["TypeScript", "React", "Next.js", "Node.js"],
   "Styling": ["Tailwind CSS", "CSS Modules", "MUI", "Emotion"],
   "Data": ["MongoDB", "GraphQL"],
-  "Practice": ["i18n (en/ko/ru)", "Technical SEO & JSON-LD", "Core Web Vitals", "Vercel"],
+  "Practice": ["i18n — 6 locales shipped", "Technical SEO & JSON-LD", "Core Web Vitals", "Vercel"],
 } as const;
