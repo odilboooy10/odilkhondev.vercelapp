@@ -47,6 +47,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${fraunces.variable} antialiased`}
     >
       <body className="min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: site.name,
+              url: site.url,
+              email: `mailto:${site.email}`,
+              jobTitle: site.role,
+              description: site.tagline,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Seoul",
+                addressCountry: "KR",
+              },
+              knowsLanguage: site.languages.map((l) => l.name),
+              sameAs: [site.social.github, site.social.linkedin],
+            }),
+          }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"

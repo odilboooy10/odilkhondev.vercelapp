@@ -19,8 +19,9 @@ export default function Home() {
           </h1>
           <p className="mt-7 max-w-2xl text-lede text-ink-muted">{site.tagline}</p>
           <p className="mt-4 max-w-2xl text-lede text-ink-muted">
-            Three platforms in production, shipping in {site.languages.length} languages
-            across two markets.
+            Three platforms in production since {site.since}, built solo — a grocery
+            marketplace, a medical-device export catalog, and an enterprise energy
+            platform.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
             <a
@@ -91,21 +92,24 @@ export default function Home() {
               legible without flattening it.
             </p>
             <p>
-              {/* TODO: rewrite in your own voice. This is the paragraph people read twice. */}
               That means I spend as much time on content modelling, structured data,
               and performance budgets as on interface work. A site that loads
               instantly and parses cleanly for a crawler is doing commercial work,
               not just looking good.
             </p>
             <p>
-              Based in {site.location}, working in {site.languages.join(", ")}.
+              I work in five languages, which is less of a footnote than it sounds:
+              Medistan sells Korean dental materials into Russian-speaking Eurasia,
+              and I wrote that localisation rather than commissioned it. Based in{" "}
+              {site.location}, building for the web since {site.since}.
             </p>
           </div>
           <dl className="space-y-5 text-sm">
             {[
-              ["Markets", "Korea, CIS, global B2B"],
-              ["Shipping since", "TODO"],
-              ["Open to", "TODO: roles, contracts, or both"],
+              ["Based in", site.location],
+              ["Building since", site.since],
+              ["Markets", "Korea, Europe, Russian-speaking Eurasia"],
+              ["Open to", site.availability],
             ].map(([k, v]) => (
               <div key={k} className="border-t border-rule pt-3">
                 <dt className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-faint">
@@ -114,6 +118,19 @@ export default function Home() {
                 <dd className="mt-1.5 text-ink">{v}</dd>
               </div>
             ))}
+            <div className="border-t border-rule pt-3">
+              <dt className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-faint">
+                Languages
+              </dt>
+              <dd className="mt-1.5 space-y-1">
+                {site.languages.map((l) => (
+                  <div key={l.name} className="flex justify-between gap-4">
+                    <span className="text-ink">{l.name}</span>
+                    <span className="text-ink-faint">{l.level}</span>
+                  </div>
+                ))}
+              </dd>
+            </div>
           </dl>
         </div>
       </Section>
@@ -151,6 +168,24 @@ export default function Home() {
         >
           {site.email}
         </a>
+        <div className="mt-8 flex flex-wrap gap-x-7 gap-y-2 text-sm">
+          <a
+            href={site.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-muted underline decoration-rule underline-offset-[6px] transition-colors hover:text-accent"
+          >
+            GitHub ↗
+          </a>
+          <a
+            href={site.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-muted underline decoration-rule underline-offset-[6px] transition-colors hover:text-accent"
+          >
+            LinkedIn ↗
+          </a>
+        </div>
       </Section>
 
       <footer className="border-t border-rule py-10">

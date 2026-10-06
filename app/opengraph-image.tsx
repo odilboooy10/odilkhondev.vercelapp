@@ -30,7 +30,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
           <div
             style={{
-              fontSize: 104,
+              fontSize: 86,
               color: "#1b1b19",
               letterSpacing: "-0.03em",
               lineHeight: 1,
